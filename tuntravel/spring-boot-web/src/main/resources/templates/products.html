@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Reservation</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(products)}">
+        <h2>My Reservation</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Vol Num</th>
+                <th>Nom et Prénom</th>
+                <th>Nb Place</th>
+                <th>Destination</th>
+                <th>Classe</th>
+                <th>Consulter</th>
+                <th>Modifier</th>
+                <th>Annuler</th>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"><a href="/product/${product.id}">Id</a></td>
+                <td th:text="${product.productId}">Vol Num</td>
+                <td th:text="${product.name}">Nom et Prénom</td>
+                <td th:text="${product.price}">Nb Place</td>
+                <td th:text="${product.destination}">Destination</td>
+                <td th:text="${product.classe}">Classe</td>
+                <td><a th:href="${ '/reservations/' + product.id}">Consulter</a></td>
+                <td><a th:href="${'/reservations/edit/' + product.id}">Modifier</a></td>
+                <td><a th:href="${'/reservations/delete/' + product.id}">Annuler</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

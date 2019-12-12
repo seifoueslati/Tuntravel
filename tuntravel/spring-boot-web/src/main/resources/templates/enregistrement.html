@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Enregistrement</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(enregistrements)}">
+        <h2>My Enregistrement</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Vol Id</th>
+                <th>Num Carte</th>
+                <th>etat</th>
+                <th>Consulter</th>
+                <th>Modifier</th>
+                <th>Annuler</th>
+            </tr>
+            <tr th:each="enregistrement : ${enregistrements}">
+                <td th:text="${enregistrement.id}"><a href="/enregistrement/${enregistrement.id}">Id</a></td>
+                <td th:text="${enregistrement.idvol}">Vol Id</td>
+                <td th:text="${enregistrement.numcarte}">Num Carte</td>
+                <td th:text="${enregistrement.etat}">etat</td>
+                <td><a th:href="${ '/enregistrement/' + enregistrement.id}">Consulter</a></td>
+                <td><a th:href="${'/enregistrement/edit/' + enregistrement.id}">Modifier</a></td>
+                <td><a th:href="${'/enregistrement/delete/' + enregistrement.id}">Annuler</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
