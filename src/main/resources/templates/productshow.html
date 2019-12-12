@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
 
-    <title>Spring Boot Exemple</title>
+    <title>Gestion des aeroports</title>
 
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
@@ -10,25 +10,45 @@
 <div class="container">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 
-    <h2>Product Details</h2>
+    <h2>User Details</h2>
         <div>
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Product Id:</label>
+                    <label class="col-sm-2 control-label"> Id:</label>
                     <div class="col-sm-10">
-                        <p class="form-control-static" th:text="${product.id}">Product Id</p></div>
+                        <p class="form-control-static" th:text="${product.id}"> Id</p></div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Name:</label>
+                    <label class="col-sm-2 control-label">Nom:</label>
                     <div class="col-sm-10">
-                        <p class="form-control-static" th:text="${product.name}">name</p>
+                        <p class="form-control-static" th:text="${product.nom}">nom</p>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Price:</label>
+                    <label class="col-sm-2 control-label"> Prenom:</label>
                     <div class="col-sm-10">
-                        <p class="form-control-static" th:text="${product.price}">Price</p>
+                        <p class="form-control-static" th:text="${product.prenom}"> Prenom</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Telephone:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${product.telephone}">Telephone</p>
                     </div>
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label"> Email:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${product.email}"> Email</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"> Sexe:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${product.sexe}"> sexe</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"> Date de naissance :</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${product.Date_de_naissance}"> Date de naissance </p></div>
+                </div>
                 </div>
             </form>
     </div>

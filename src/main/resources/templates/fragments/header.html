@@ -2,15 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head lang="en">
-
-
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
 </head>
 
-<body >
+<body>
 <div class="container">
     <div th:fragment="header">
         <nav class="navbar navbar-default">
@@ -18,22 +15,23 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
                     <ul class="nav navbar-nav">
-                        <li><a href="#" th:href="@{/products}">Products</a></li>
-                        <li><a href="#" th:href="@{/product/new}">Create new product</a></li>
-                        <li><a href="#" th:href="@{/bagages}">Bagages</a></li>
-			            <li><a href="#" th:href="@{/bagage/new}">Create new bagage</a></li>
-						
+                        <li><a href="#" th:href="@{/products}">users</a></li>
+                        <li><a href="#" th:href="@{/product/new}">Create new user</a></li>
                     </ul>
 
                 </div>
             </div>
         </nav>
 
-        <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.7);" >
-            <h2>Luggage Controle</h2>
-             <h3>Welcome</h3>
-       <div class="row text-center">
-                <img src="../../static/images/boot1.jpg" width="100%" th:src="@{/images/boot1.jpg}"/>
+        <div class="jumbotron">
+            <div class="row text-center">
+                <div class="">
+                    <h2>Gestion des Aeroports </h2>
+                    <h3>Welcome</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <img src="../../static/images/boot.png" width="200" th:src="@{/images/i86062-.jpeg}"/>
             </div>
         </div>
 

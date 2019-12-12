@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
 
-    <title>Spring Boot Exemple</title>
+    <title>Gestion des aeroports</title>
 
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
@@ -14,18 +14,26 @@
         <table class="table table-striped">
             <tr>
                 <th>Id</th>
-                <th>Product Id</th>
-                <th>Name</th>
-                <th>Price</th>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Sexe</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th>Date de naissance</th>
                 <th>View</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
             <tr th:each="product : ${products}">
                 <td th:text="${product.id}"><a href="/product/${product.id}">Id</a></td>
-                <td th:text="${product.productId}">Product Id</td>
-                <td th:text="${product.name}">descirption</td>
-                <td th:text="${product.price}">price</td>
+                <td th:text="${product.Id}"> Id</td>
+                <td th:text="${product.nom}">Nom</td>
+                <td th:text="${product.prenom}">Prenom</td>
+                <td th:text="${product.sexe}"> Sexe</td>
+                <td th:text="${product.email}">Email</td>
+                <td th:text="${product.telephone}">Telephone</td>
+                <td th:text="${product.Date_de_naissance}"> Date de naissance</td>
                 <td><a th:href="${ '/product/' + product.id}">View</a></td>
                 <td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>
                 <td><a th:href="${'/product/delete/' + product.id}">Delete</a></td>
