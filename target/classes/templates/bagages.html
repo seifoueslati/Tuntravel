@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+
+
+<style>
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 10vh;
+    font-family: "Exo", sans-serif;
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+h3 {
+     color: #0000;
+    font-weight: 100;
+}
+
+h5 {
+     color: #0000;
+    font-weight:300;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: #ddd;
+}
+
+</style>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+     <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.4);" >
+       
+    <div th:if="${not #lists.isEmpty(bagages)}">
+        <h2>Bagage List</h2>
+        <table class="table table-striped" style="background-color=#0000;">
+            <tr>
+                <th>  &nbsp;Id</th>
+                <th>Poid</th>
+                <th>Quantite</th>
+                <th>Price</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="bagage : ${bagages}">
+                <td th:text="${bagage.id}"><a href="/bagage/${bagage.id}">Id</a></td>
+                <td th:text="${bagage.poid}">poid</td>
+                <td th:text="${bagage.price}">price</td>
+                 <td th:text="${bagage.nombre}">NBR</td>
+                <td><a th:href="${ '/bagage/' + bagage.id}">View</a></td>
+                <td><a th:href="${'/bagage/edit/' + bagage.id}">Edit</a></td>
+                <td><a th:href="${'/bagage/delete/' + bagage.id}">Delete</a></td>
+            </tr>
+        </table>
+</div>
+    </div>
+</div>
+
+</body>
+</html>

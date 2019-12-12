@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Example</title>
+
+<style>
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 10vh;
+    font-family: "Exo", sans-serif;
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+h3 {
+     color: #ffff;
+    font-weight: 100;
+}
+
+h5 {
+     color: #ffff;
+    font-weight:300;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: #ddd;
+}
+
+</style>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Product Details</h2><p>your rfid tag will be "tag14254788"</p>
+    <div>
+        <form class="form-horizontal" th:object="${bagage}" th:action="@{/bagage}" method="post">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">bagage Id:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{id}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">poid:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{poid}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">nombre:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{nombre}"/>
+                </div>
+            </div>
+                   <div class="form-group">
+                <label class="col-sm-2 control-label">price:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{price}"/>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
