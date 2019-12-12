@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Example</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Avion</h2>
+    <div>
+        <form class="form-horizontal" th:object="${avion}" th:action="@{/avion}" method="post">
+            <input type="hidden" th:field="*{id}"/>        
+            <div class="form-group">
+                <label class="col-sm-2 control-label">ref_avion</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{ref_avion}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">agence</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{agence}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">nbr_place</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{nbr_place}"/>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

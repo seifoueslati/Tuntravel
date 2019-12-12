@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Vol</h2>
+        <div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">ref_avion</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${vol.ref_avion}">ref_avion</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">direction</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${vol.direction}">direction</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">aeroport_esc</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${vol.aeroport_esc}">aeroport_esc</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">heure_dep</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${vol.heure_dep}">heure_dep</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">heure_arriv</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${vol.heure_arriv}">heure_arriv</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">heure_esc</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${vol.heure_esc}">heure_esc</p>
+                    </div>
+                </div>            
+            </form>
+    </div>
+</div>
+
+</body>
+</html>

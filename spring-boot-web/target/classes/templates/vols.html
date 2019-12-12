@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(vols)}">
+        <h2>Vol</h2>
+        <table class="table table-striped">
+            <tr>    
+                <th>id</th>                   
+                <th>ref_avion</th>
+                <th>direction</th>
+                <th>aeroport_esc</th>
+                <th>heure_dep</th>
+                <th>heure_arriv</th>
+                <th>heure_esc</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="vol : ${vols}">
+                <td th:text="${vol.id}"><a href="/vol/${vol.id}">id</a></td>
+                <td th:text="${vol.ref_avion}">ref_avion</td>
+                <td th:text="${vol.direction}">direction</td>
+                <td th:text="${vol.aeroport_esc}">aeroport_esc</td>
+                <td th:text="${vol.heure_dep}">heure_dep</td>
+                <td th:text="${vol.heure_arriv}">heure_arriv</td>
+                <td th:text="${vol.heure_esc}">heure_esc</td>             
+                <td><a th:href="${ '/vol/' + vol.id}">View</a></td>
+                <td><a th:href="${'/vol/edit/' + vol.id}">Edit</a></td>
+                <td><a th:href="${'/vol/delete/' + vol.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Example</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Vol</h2>
+    <div>
+        <form class="form-horizontal" th:object="${vol}" th:action="@{/vol}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">ref_avion</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{ref_avion}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">direction</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{direction}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">aeroport_esc</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{aeroport_esc}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">heure_dep</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{heure_dep}"/>
+                </div>
+            </div>            
+            <div class="form-group">
+                <label class="col-sm-2 control-label">heure_arriv</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{heure_arriv}"/>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label class="col-sm-2 control-label">heure_esc</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{heure_esc}"/>
+                </div>
+            </div>             
+            <div class="row">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
